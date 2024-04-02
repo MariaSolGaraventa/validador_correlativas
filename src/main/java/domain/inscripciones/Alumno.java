@@ -39,7 +39,7 @@ public class Alumno {
         return unaMateria.correlativasAprobadas(this);
     }
 
-    public boolean aprobo(Materia unaMateria) {
+    public Boolean aprobo(Materia unaMateria) {
         return this.materiasAprobadas.contains(unaMateria);
     }
 }

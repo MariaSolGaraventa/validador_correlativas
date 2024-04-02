@@ -25,12 +25,6 @@ public class Inscripcion {
         Collections.addAll(this.materiasInscripcion, materiasInscripcion);
     }
 
-/*    private Boolean aprobada() {
-        for(Materia materia : materiasInscripcion) {
-            return alumno.aprobo(materia);
-        }
-    }*/
-
     public boolean aprobada() {
         return this.materiasInscripcion.stream().allMatch(materia -> alumno.cumpleCorrelativas(materia));
     }
