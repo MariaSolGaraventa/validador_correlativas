@@ -1,6 +1,7 @@
 package domain.inscripciones;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Materia {
@@ -20,12 +21,8 @@ public class Materia {
         this.nombre = nombre;
     }
 
-    public List<Materia> getMateriasCorrelativas() {
-        return materiasCorrelativas;
-    }
-
-    public void setMateriasCorrelativas(List<Materia> materiasCorrelativas) {
-        this.materiasCorrelativas = materiasCorrelativas;
+    public void agregarMateriasCorrelativas(Materia ... materiasCorrelativas) {
+        Collections.addAll(this.materiasCorrelativas, materiasCorrelativas);
     }
 
     public Boolean correlativasAprobadas(Alumno alumno) {

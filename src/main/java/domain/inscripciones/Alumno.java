@@ -1,6 +1,7 @@
 package domain.inscripciones;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Alumno {
@@ -30,12 +31,8 @@ public class Alumno {
         this.legajo = legajo;
     }
 
-    public List<Materia> getMateriasAprobadas() {
-        return materiasAprobadas;
-    }
-
-    public void setMateriasAprobadas(List<Materia> materiasAprobadas) {
-        this.materiasAprobadas = materiasAprobadas;
+    public void agregarMateriasAprobadas(Materia ... materiasAprobadas) {
+        Collections.addAll(this.materiasAprobadas, materiasAprobadas);
     }
 
     public Boolean cumpleCorrelativas(Materia unaMateria) {

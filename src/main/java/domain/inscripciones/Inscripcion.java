@@ -1,6 +1,7 @@
 package domain.inscripciones;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Inscripcion {
@@ -20,14 +21,9 @@ public class Inscripcion {
         this.alumno = alumno;
     }
 
-    public List<Materia> getMateriasInscripcion() {
-        return materiasInscripcion;
+    public void agregarMateriasInscripcion(Materia ... materiasInscripcion) {
+        Collections.addAll(this.materiasInscripcion, materiasInscripcion);
     }
-
-    public void setMateriasInscripcion(List<Materia> materiasInscripcion) {
-        this.materiasInscripcion = materiasInscripcion;
-    }
-
 
 /*    private Boolean aprobada() {
         for(Materia materia : materiasInscripcion) {
@@ -35,7 +31,7 @@ public class Inscripcion {
         }
     }*/
 
-    private Boolean inscripcionAprobada() {
+    public boolean aprobada() {
         return this.materiasInscripcion.stream().allMatch(materia -> alumno.cumpleCorrelativas(materia));
     }
 }
